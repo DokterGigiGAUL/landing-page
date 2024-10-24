@@ -31,22 +31,19 @@ header {
     padding: 1rem 0;
 }
 
+/* Navbar styles for larger screens */
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5rem;
-}
-
 .nav-links {
     list-style-type: none;
+    display: flex;
 }
 
 .nav-links li {
-    display: inline;
     margin-left: 1rem;
 }
 
@@ -54,6 +51,48 @@ header {
     color: #fff;
     text-decoration: none;
 }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: none; /* Initially hide navigation links on mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active class is added */
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .nav-links a {
+        padding: 1rem;
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        color: #fff;
+        font-size: 1.5rem;
+    }
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+
 
 .hero-section {
     background: #007BFF;
@@ -116,18 +155,19 @@ footer {
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="container">
-                <h1 class="logo">EventPromote</h1>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">EventPromote</h1>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
     <section id="home" class="hero-section">
         <div class="container">
@@ -173,7 +213,12 @@ footer {
             </form>
         </div>
     </section>
-
+<script>
+    function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+</script>
 
     <footer>
         <div class="container">
