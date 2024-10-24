@@ -1,0 +1,168 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a, .login-button {
+    color: #fff;
+    text-decoration: none;
+}
+
+.login-button {
+    padding: 5px 15px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background: #2c2c54;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.hero .cta-button {
+    background: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.hero .event-date {
+    margin-top: 10px;
+}
+
+.overlay-image img {
+    width: 150px;
+    border-radius: 10px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Welcome Section */
+.welcome-section {
+    background: #f4f4f4;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.welcome-text {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.video-preview {
+    position: relative;
+    display: inline-block;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* Speakers Section */
+.speakers {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.speaker-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.speaker img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.speaker h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Art Symposium Section */
+.art-symposium {
+    background: #f4f4f4;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.art-symposium .cta-button {
+    background: #3b5998;
+}
+
+.symposium-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.symposium-images {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.symposium-images img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
