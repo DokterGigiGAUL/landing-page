@@ -36,6 +36,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Add relative positioning for dropdown effect */
 }
 
 .nav-links {
@@ -51,19 +52,23 @@ header {
     color: #fff;
     text-decoration: none;
 }
-.hamburger{display:none;}
-        
+
 /* Media query for smaller screens */
 @media (max-width: 768px) {
     .navbar .container {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .nav-links {
-        display: none; /* Initially hide navigation links on mobile */
+        display: none; /* Hide navigation links on mobile by default */
         flex-direction: column;
         width: 100%;
         background-color: #333;
+        position: absolute;
+        top: 100%; /* Position below the navbar */
+        left: 0;
+        z-index: 999;
     }
 
     .nav-links.active {
@@ -160,13 +165,14 @@ footer {
         <div class="container">
             <h1 class="logo">EventPromote</h1>
             <div class="hamburger" onclick="toggleMenu()">☰</div>
-            <ul class="nav-links">
+             </div>
+                <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#events">Events</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
+       
     </nav>
 </header>
 
@@ -215,7 +221,7 @@ footer {
         </div>
     </section>
 <script>
-    function toggleMenu() {
+function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
 }
