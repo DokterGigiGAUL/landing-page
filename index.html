@@ -2,234 +2,187 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Promoter Website</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Gigital - Creative Dental Merchandise & Resources</title>
     <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* CSS Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-}
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: #004C8C;
+            color: white;
+        }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
+        header nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-}
+        .cta-button {
+            background-color: #FFC857;
+            color: #004C8C;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
 
-/* Navbar styles for larger screens */
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative; /* Add relative positioning for dropdown effect */
-}
+        .hero {
+            background-color: #004C8C;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
 
-.nav-links {
-    list-style-type: none;
-    display: flex;
-}
+        .hero h1 {
+            font-size: 3em;
+        }
 
-.nav-links li {
-    margin-left: 1rem;
-}
+        .hero p {
+            font-size: 1.5em;
+            margin-top: 15px;
+        }
 
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-}
+        .products, .about, .testimonials, .contact {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    .navbar .container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+        .products h2, .about h2, .testimonials h2, .contact h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #004C8C;
+        }
 
-    .nav-links {
-        display: none; /* Hide navigation links on mobile by default */
-        flex-direction: column;
-        width: 100%;
-        background-color: #333;
-        position: absolute;
-        top: 10%; /* Position below the navbar */
-        left: 0;
-        z-index: 999;
-    }
+        .products .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-    .nav-links.active {
-        display: flex; /* Show links when active class is added */
-    }
+        .product-card {
+            flex: 1 1 calc(33% - 30px);
+            border: 1px solid #E1E5EB;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #F9FAFB;
+            transition: transform 0.3s;
+        }
 
-    .nav-links li {
-        margin: 0;
-        text-align: center;
-        padding: 0.5rem 0;
-    }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
 
-    .nav-links a {
-        padding: 1rem;
-        display: block;
-    }
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
 
-    .hamburger {
-        display: block;
-        cursor: pointer;
-        color: #fff;
-        font-size: 1.5rem;
-    }
-}
+        .testimonials blockquote {
+            font-style: italic;
+            color: #004C8C;
+        }
 
-.logo {
-    font-size: 1.5rem;
-}
+        footer {
+            background-color: #E1E5EB;
+            text-align: center;
+            padding: 20px 0;
+        }
 
-
-
-.hero-section {
-    background: #007BFF;
-    color: #fff;
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.hero-section .btn {
-    background: #fff;
-    color: #007BFF;
-    padding: 0.5rem 1rem;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.events-section {
-    padding: 2rem 0;
-    background: #fff;
-}
-
-.events-section .event-card {
-    background: #f4f4f4;
-    padding: 1rem;
-    margin: 1rem 0;
-    border: 1px solid #ddd;
-}
-
-.about-section, .contact-section {
-    padding: 2rem 0;
-}
-
-.contact-section form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-section input, .contact-section textarea {
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-}
-
-.contact-section .btn {
-    background: #007BFF;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border: none;
-    cursor: pointer;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
-}        
+        .footer-links a {
+            color: #004C8C;
+            margin: 0 10px;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-<header>
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">EventPromote</h1>
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
-        </div>
-    </nav>
-    <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</header>
+    <header>
+        <div class="logo">Gigital</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a href="#products" class="cta-button">Shop Now</a>
+    </header>
 
-    <section id="home" class="hero-section">
-        <div class="container">
-            <h2>Welcome to EventPromote</h2>
-            <p>Your Gateway to Great Events</p>
-            <a href="#events" class="btn">Explore Events</a>
-        </div>
+    <section class="hero" id="home">
+        <h1>Creative Dental Merchandise & Resources</h1>
+        <p>Exclusive products for dental professionals & enthusiasts</p>
+        <a href="#products" class="cta-button">Explore Products</a>
     </section>
 
-    <section id="events" class="events-section">
-        <div class="container">
-            <h2>Upcoming Events</h2>
-            <div class="events-list">
-                <div class="event-card">
-                    <h3>Event Title 1</h3>
-                    <p>Date: 25 Oct 2024</p>
-                    <a href="#" class="btn">View Details</a>
-                </div>
-                <div class="event-card">
-                    <h3>Event Title 2</h3>
-                    <p>Date: 10 Nov 2024</p>
-                    <a href="#" class="btn">View Details</a>
-                </div>
+    <section class="products" id="products">
+        <h2>Our Products</h2>
+        <div class="grid">
+            <div class="product-card">
+                <img src="ebook.jpg" alt="Ebook">
+                <h3>Ebook: Modern Dental Practices</h3>
+                <p>A comprehensive guide to digital workflows in dentistry.</p>
+            </div>
+            <div class="product-card">
+                <img src="webinar.jpg" alt="Webinar">
+                <h3>Webinar: AI in Dentistry</h3>
+                <p>Explore the integration of AI in modern dental care.</p>
+            </div>
+            <div class="product-card">
+                <img src="podcast.jpg" alt="Podcast">
+                <h3>Podcast: The Digital Dentist</h3>
+                <p>Listen to insights from experts in digital dentistry.</p>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>We promote and organize insightful events to bridge knowledge and innovation.</p>
-        </div>
+    <section class="about" id="about">
+        <h2>Why Gigital?</h2>
+        <p>Gigital is your go-to hub for creative dental merchandise and digital resources. We aim to innovate and inspire dental professionals through products that blend creativity, professionalism, and technology.</p>
     </section>
 
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </div>
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <blockquote>"Gigital's products have transformed the way I practice dentistry. The quality and creativity are unmatched!"</blockquote>
     </section>
-<script>
-function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-}
-</script>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required><br><br>
+            <input type="email" name="email" placeholder="Your Email" required><br><br>
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea><br><br>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 EventPromote. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
         </div>
+        <p>&copy; 2024 Gigital. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript to handle form submission (Simple alert-based action)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Thank you for contacting us! We'll get back to you soon.");
+            // Here, you can integrate further action, like sending the form data to a server.
+        });
+    </script>
 </body>
 </html>
